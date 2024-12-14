@@ -1,0 +1,16 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Python: Flask",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/run.py",
+      "env": {
+        "FLASK_APP": "run.py",
+        "FLASK_ENV": "development"
+      },
+      "console": "integratedTerminal"
+    }
+  ]
+}

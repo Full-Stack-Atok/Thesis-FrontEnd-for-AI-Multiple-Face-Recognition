@@ -1,34 +1,39 @@
 {
-    "files.associations": {
+  "files.associations": {
       "*.html": "html",
       "*.css": "css",
       "*.js": "javascript"
-    },
-    "html.format.indentSize": 2,
-    "html.format.wrapLineLength": 120,
-    "css.format.indentSize": 2,
-    "css.format.wrapLineLength": 120,
-    "javascript.format.insertSpaceBeforeFunctionParenthesis": true,
-    "javascript.format.indentSize": 2,
-    "javascript.format.wrapLineLength": 120,
-    "editor.tabSize": 2,
-    "editor.detectIndentation": false,
-    "editor.formatOnSave": true,
-    "editor.rulers": [80, 120],
-    "emmet.includeLanguages": {
+  },
+  "html.format.indentSize": 2,
+  "html.format.wrapLineLength": 120,
+  "css.format.indentSize": 2,
+  "css.format.wrapLineLength": 120,
+  "javascript.format.insertSpaceBeforeFunctionParenthesis": true,
+  "javascript.format.indentSize": 2,
+  "javascript.format.wrapLineLength": 120,
+  "editor.tabSize": 2,
+  "editor.detectIndentation": false,
+  "editor.formatOnSave": true,
+  "editor.rulers": [80, 120],
+  "emmet.includeLanguages": {
       "javascript": "javascriptreact",
       "html": "html"
-    },
-    "liveServer.settings.port": 5501,
-    "files.autoSave": "onWindowChange",
-    "files.autoSaveDelay": 1000,
-    "prettier.requireConfig": true,
-    "javascript.updateImportsOnFileMove.enabled": "always",
-    "cSpell.words": [
+  },
+  "liveServer.settings.port": 5501,
+  "files.autoSave": "onWindowChange",
+  "files.autoSaveDelay": 1000,
+  "prettier.requireConfig": true,
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "cSpell.words": [
       "frontalface",
       "haarcascade",
       "haarcascades",
-      "imshow"
-    ]
+      "imshow",
+      "imwrite"
+  ],
+  "python.pythonPath": "venv\\Scripts\\python.exe",  // Add the correct path to your virtual environment
+  "python.linting.enabled": true,
+  "python.linting.pylintEnabled": true,
+  "python.linting.flake8Enabled": true,
+  "python.linting.pep8Enabled": false
 }
-  
