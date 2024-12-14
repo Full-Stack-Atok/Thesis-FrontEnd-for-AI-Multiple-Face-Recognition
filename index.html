@@ -49,6 +49,7 @@
            <!-- Canvas for Image Capture -->
             <label for="captureCanvas">Capture Image:</label>
             <canvas id="captureCanvas" width="640" height="480" class="border"></canvas>
+            <br>
 
             <!-- Buttons for Actions -->
              <button class="btn btn-primary mt-2" id="takeImage">Take Image</button>
@@ -58,12 +59,34 @@
 
        <!-- Attendance Section (For Already Registered) -->
        <div class="card mt-4">
-        <div class="card-header bg-primary text-white"></div>
+        <div class="card-header bg-primary text-white">
+          For Already Registered
+        </div>
+        <div class="card-body">
+          <button class="btn btn-warning" id="takeAttendance">Take Attendance</button>
+          <table class="table mt-3">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Date</th>
+                <th>Time</th>
+              </tr>
+            </thead>
+            <tbody id="attendanceTable">
+              <!-- Dynamically filled rows for attendance -->
+            </tbody>
+          </table>
+        </div>
        </div>
     </main>
-    <footer>
+
+    <footer class="bg-dark text-white text-center py-3">
       <!-- place footer here -->
+       <button class="btn btn-danger" id="quit">Quit</button>
+       <p>Total Registrations: <span id="totalRegistration">0</span></p>
     </footer>
+
     <!-- Bootstrap JavaScript Libraries -->
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
@@ -76,5 +99,60 @@
       integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
       crossorigin="anonymous"
     ></script>
+
+    <!-- JavaScript for Camera and Canvas -->
+     <script>
+      const video = document.createElement("video");
+      const canvas = document.getElementById("captureCanvas");
+      const ctx = canvas.getContext("2d");
+
+      // Display current time dynamically
+      function updateTime() {
+        const now = new Date();
+        document.getElementById("current-time").innerText = now.toLocaleString();
+      }
+      setInterval(updateTime, 1000);
+
+      // Access webcam stream
+      navigator.mediaDevices
+        .getUserMedia({ video: true })
+        .then((stream) => {
+         video.srcObject = stream;
+         video.play();
+         function draw() {
+          ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+          requestAnimationFrame(draw);
+         }
+         draw(); 
+        })
+        .catch((err) => {
+          console.error("Error accessing webcam:", err);
+        });
+
+        // Capture image from video feed when the "Take Image" button is clicked
+        document.getElementById("takeImage").addEventListener("click", () => {
+          ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+        });
+
+        // Save Profile (For Now, Log Data to Console)
+        document.getElementById("saveProfile").addEventListener("click", () => {
+          const imageData = canvas.toDataURL("image/png");
+          const id = document.getElementById("id").value;
+          const name= document.getElementById("name").value;
+          console.log("ID:", id, "Name:", name, "Image Data:", imageData);
+          // In a real system, save this data to a database
+        });
+
+        // Clear ID and Name Fields
+        document.getElementById("clearId").addEventListener("click", () => {
+          document.getElementById("id").value = "";
+        });
+
+        document.getElementById("clearName").addEventListener("click", () => {
+          document.getElementById("name").value = "";
+        });
+
+
+     </script>
   </body>
 </html>
