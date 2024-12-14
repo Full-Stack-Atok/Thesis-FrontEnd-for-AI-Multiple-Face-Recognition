@@ -152,7 +152,22 @@
           document.getElementById("name").value = "";
         });
 
+        // Attendance Functionality (simple logging for now)
+        document.getElementById("takeAttendance").addEventListener("click", () => {
+          const newRow = document.createElement("tr");
+          newRow.innerHTML = `<td>${document.getElementById("id").value}</td>
+                              <td>${document.getElementById("name").value}</td>
+                              <td>${new Date().toLocaleDateString()}</td>
+                              <td>${new Date().toLocaleTimeString()}</td>`;
+          document.getElementById("attendanceTable").appendChild(newRow);
+          document.getElementById("totalRegistration") = 
+            document.getElementById("attendanceTable").rows.length;
+        });
 
+        // Quit button Functionality (close the page for now)
+        document.getElementById("quit").addEventListener("click", () => {
+          window.close(); // In a real app, this might exit the system or navigate away
+        });
      </script>
   </body>
 </html>

@@ -23,6 +23,12 @@
     "files.autoSave": "onWindowChange",
     "files.autoSaveDelay": 1000,
     "prettier.requireConfig": true,
-    "javascript.updateImportsOnFileMove.enabled": "always"
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "cSpell.words": [
+      "frontalface",
+      "haarcascade",
+      "haarcascades",
+      "imshow"
+    ]
 }
   
