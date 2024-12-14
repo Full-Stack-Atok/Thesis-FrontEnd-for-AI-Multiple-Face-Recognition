@@ -19,11 +19,48 @@
   </head>
 
   <body>
+
     <header class="bg-dark text-white text-center py-3">
       <!-- place navbar here -->
        <h1>Face Detection Monitoring System</h1>
+       <p id="current-time">Loading Time...</p>
     </header>
-    <main></main>
+
+    <main class="container my-4">
+      <!-- Card for Registration Section -->
+       <div class="card">
+        <div class="card-header bg-success text-white">
+          For New Registrations
+        </div>
+        <div class="card-body">
+          <!-- ID and Name Input Fields -->
+           <div class="form-group mb-3">
+            <label for="id">Enter ID:</label>
+            <input type="text" class="form-control" id="id" placeholder="Enter ID">
+            <button class="btn btn-danger mt-2" id="clearId">Clear</button>
+           </div>
+
+           <div class="form-group mb-3">
+            <label for="id">Enter Name:</label>
+            <input type="text" class="form-control" id="name" placeholder="Enter Name">
+            <button class="btn btn-danger mt-2" id="clearName">Clear</button>
+           </div>
+
+           <!-- Canvas for Image Capture -->
+            <label for="captureCanvas">Capture Image:</label>
+            <canvas id="captureCanvas" width="640" height="480" class="border"></canvas>
+
+            <!-- Buttons for Actions -->
+             <button class="btn btn-primary mt-2" id="takeImage">Take Image</button>
+             <button class="btn btn-info mt-2" id="saveProfile">Save Profile</button>
+        </div>
+       </div>
+
+       <!-- Attendance Section (For Already Registered) -->
+       <div class="card mt-4">
+        <div class="card-header bg-primary text-white"></div>
+       </div>
+    </main>
     <footer>
       <!-- place footer here -->
     </footer>
